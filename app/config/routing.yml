@@ -1,0 +1,18 @@
+acme_demo:
+    resource: "@AcmeDemoBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+file_file:
+    resource: "@FileFileBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+myfrontend:
+    resource: "@MyfrontendBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+file_file_homepage:
+    pattern: /upload
+    defaults: { _controller: FileFileBundle:Upload:upload  }

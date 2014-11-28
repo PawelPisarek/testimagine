@@ -1,0 +1,25 @@
+
+
+
+    {%if status is not defined %}
+
+
+    <form class="form" method="POST" enctype="multipart/form-data" action="{{ path('file_file_homepage') }}">
+        <h2 class="form-signin-heading">Please Upload</h2>
+        <input type="file" name="img">
+        <button class="btn btn-large btn-primary" type="submit">Upload</button>
+
+    </form>
+
+
+    {% elseif status=='success'%}
+        {% if uploadedURL is defined%}
+            <img src="{{asset(uploadedURL)}}">
+        {% endif %}
+    {% else %}
+        {% if message is defined%}
+            <div class="alert alert-error">
+                <p>{{message}}</p>
+            </div>
+        {% endif %}
+    {% endif %}
